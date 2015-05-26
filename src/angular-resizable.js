@@ -1,5 +1,18 @@
 angular.module('angularResizable', [])
     .directive('resizable', function() {
+        var toCall;
+        function throttle(fun) {
+            if (toCall === undefined) {
+                toCall = fun;
+                setTimeout(function() {
+                    toCall();
+                    toCall = undefined;
+                    console.log("Called function");
+                }, 100);
+            } else {
+                toCall = fun;
+            }
+        }
         return {
             restrict: 'AE',
             scope: {
@@ -63,7 +76,7 @@ angular.module('angularResizable', [])
                             break;
                     }
                     updateInfo();
-                    scope.$emit("angular-resizable.resizing", info);
+                    throttle(function() { scope.$emit("angular-resizable.resizing", info);});
                 };
                 var dragEnd = function(e) {
                     updateInfo();
