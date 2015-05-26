@@ -62,6 +62,8 @@ angular.module('angularResizable', [])
                             else {            element[0].style.width = w + (offset * vx) + 'px'; }
                             break;
                     }
+                    updateInfo();
+                    scope.$emit("angular-resizable.resizing", info);
                 };
                 var dragEnd = function(e) {
                     updateInfo();
@@ -70,7 +72,7 @@ angular.module('angularResizable', [])
                     document.removeEventListener('mouseup', dragEnd, false);
                     document.removeEventListener('mousemove', dragging, false);
                     element.removeClass('no-transition');
-                }
+                };
                 var dragStart = function(e, direction) {
                     dragDir = direction;
                     axis = dragDir == 'left' || dragDir == 'right' ? 'x' : 'y';
