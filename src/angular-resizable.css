@@ -77,8 +77,31 @@
   margin: -14px 0 0 0;
   height: 28px;
   width: 12px;
-  right: 0;
   padding: 3px;
-  background-color: rgba(0,0,0,0.2);
+  background-color: white;
+}
+.rg-top div, .rg-bottom div {
+  position: absolute;
+  left: 50%;
+  margin: 0 -14px 0 0;
+  width: 28px;
+  height: 12px;
+  padding: 3px;
+  background-color: white;
+}
+.rg-left div {
+  right: 0;
   border-radius: 2px 0px 0px 2px;
+}
+.rg-right div {
+  left: 0;
+  border-radius: 0px 2px 2px 0px;
+}
+.rg-top div {
+  bottom: 0;
+  border-radius: 2px 2px 0px 0px;
+}
+.rg-bottom div {
+  top: 0;
+  border-radius: 0px 0px 2px 2px;
 }
