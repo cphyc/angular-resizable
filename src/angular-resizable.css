@@ -17,9 +17,9 @@
   -webkit-user-select: none;
   user-select: none;
   background: transparent;
+  color: white;
 }
 .rg-right span, .rg-left span, .rg-top span, .rg-bottom span {
-  position: absolute;
   box-sizing: border-box;
   display: block;
   border: 1px solid #ccc;
@@ -27,11 +27,8 @@
 
 .rg-right span, .rg-left span {
   border-width: 0 1px;
-  top: 50%;
-  margin-top: -10px;
-  margin: -10px 0 0 3.5px;
-  height: 20px;
-  width: 7px;
+  height: 100%;
+  width: 100%;
 }
 
 .rg-top span, .rg-bottom span {
@@ -72,4 +69,16 @@
   left: 0;
   top: 0;
   margin-left: -14px;
+}
+
+.rg-left div, .rg-right div {
+  position: absolute;
+  top: 50%;
+  margin: -14px 0 0 0;
+  height: 28px;
+  width: 12px;
+  right: 0;
+  padding: 3px;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 2px 0px 0px 2px;
 }
