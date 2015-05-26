@@ -17,7 +17,6 @@
   -webkit-user-select: none;
   user-select: none;
   background: transparent;
-  color: white;
 }
 .rg-right span, .rg-left span, .rg-top span, .rg-bottom span {
   box-sizing: border-box;
@@ -33,10 +32,8 @@
 
 .rg-top span, .rg-bottom span {
   border-width: 1px 0;
-  left: 50%;
-  margin: 3.5px 0 0 -10px;
-  width: 20px;
-  height: 7px;
+  height: 100%;
+  width: 100%;
 }
 
 .rg-top {
@@ -71,14 +68,37 @@
   margin-left: -14px;
 }
 
-.rg-left div, .rg-right div {
+.rg-left div, .rg-right div, .rg-top div, .rg-bottom div {
   position: absolute;
+}
+
+.rg-left div, .rg-right div {
   top: 50%;
   margin: -14px 0 0 0;
   height: 28px;
   width: 12px;
-  right: 0;
   padding: 3px;
-  background-color: rgba(0,0,0,0.2);
-  border-radius: 2px 0px 0px 2px;
+}
+.rg-top div, .rg-bottom div {
+  left: 50%;
+  margin: 0 -14px 0 0;
+  width: 28px;
+  height: 12px;
+  padding: 3px;
+}
+.rg-left div {
+  right: 0;
+  border-radius: 2px 0 0 2px;
+}
+.rg-right div {
+  left: 0;
+  border-radius: 0 2px 2px 0;
+}
+.rg-top div {
+  bottom: 0;
+  border-radius: 2px 2px 0 0;
+}
+.rg-bottom div {
+  top: 0;
+  border-radius: 0 0 2px 2px;
 }
