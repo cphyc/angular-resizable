@@ -1,9 +1,10 @@
 {
   "name": "angular-resizable",
   "version": "1.1.0",
-  "homepage": "https://github.com/Reklino/angular-resizable",
+  "homepage": "https://github.com/cphyc/angular-resizable",
   "authors": [
-    "Reklino <yakub89@gmail.com>"
+    "Reklino <yakub89@gmail.com>",
+    "cphyc <contact@cohyc.me>"
   ],
   "description": "A lightweight directive for creating resizable containers in angularjs",
   "main": "src/angular-resizable.js",

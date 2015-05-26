@@ -1,5 +1,6 @@
 # angular-resizable
-A directive for creating resizable containers.
+A directive for creating resizable containers. Forked from https://github
+.com/Reklino/angular-resizable.
 
 ## Why?
 All other resizable directive concepts I came across include layout logic in the directive. I wanted a directive that only handled the resize logic. This way, the layout logic is quarantined to the CSS.
@@ -39,6 +40,14 @@ This event is emitted at the beginning of a resize with the following info objec
 ### angular-resizable.resizeEnd
 
 This event is emitted at the end of a resize with the following object as an argument:
+- `info.width` : The width of the directive at time of resize end. **Will be false if resizing vertically
+- `info.height` : The height of the directive at time of resize end. **Will be false if resizing vertically
+- `info.id` : The id of the directive. **Will be false if there is no id set.
+
+### angular-resizable.resizing
+
+This event is emitted during the resizing of the element with the following object
+as an argument:
 - `info.width` : The width of the directive at time of resize end. **Will be false if resizing vertically
 - `info.height` : The height of the directive at time of resize end. **Will be false if resizing vertically
 - `info.id` : The id of the directive. **Will be false if there is no id set.
