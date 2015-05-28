@@ -23,13 +23,13 @@ angular.module('angularResizable', [])
                 rHeight: "=",
                 rFlex: "="
             },
-            link: function(scope, element, attr) {
+            link: function(scope, element) {
                 
                 // register watchers on width and height attributes if they are set
-                scope.$watch('rWidth', function(value){
+                scope.$watch('rWidth', function(){
                     element[0].style.width = scope.rWidth + 'px';
                 });
-                scope.$watch('rHeight', function(value){
+                scope.$watch('rHeight', function(){
                     element[0].style.height = scope.rHeight + 'px';
                 });
 
@@ -53,7 +53,7 @@ angular.module('angularResizable', [])
                     else
                         info.height = scope.rFlex ? parseInt(element[0].style.flexBasis) : parseInt(element[0].style.height);
                     info.id = element[0].id;
-                }
+                };
 
                 var dragging = function(e) {
                     var offset = axis == 'x' ? start - e.clientX : start - e.clientY;
@@ -78,7 +78,7 @@ angular.module('angularResizable', [])
                     updateInfo();
                     throttle(function() { scope.$emit("angular-resizable.resizing", info);});
                 };
-                var dragEnd = function(e) {
+                var dragEnd = function() {
                     updateInfo();
                     scope.$emit("angular-resizable.resizeEnd", info);
                     scope.$apply();
